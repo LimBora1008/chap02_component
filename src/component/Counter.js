@@ -10,5 +10,29 @@ export default function Counter(){
         useState(0) : 여기서 0은 초기 상태값이다
         리액트는 세터함수가 호출되면 값의 변화가 있는 것으로 판단하고
         이 컴포넌트를 다시 렌더링한다
+        const [값, 값 변경 함수] = useState(초기값)형식이다
     */
+   const [count, setCount] = useState(0);
+   // count = count + 1 로는 변경할 수 없다
+
+   // 상태 증가 함수
+   function increment(){
+    setCount(count + 1);
+   }
+   // 위의 함수를 화살표 함수로 바꾸면
+   // const increment = () => {setCount(count + 1)}
+
+   // 상태 감소 함수
+   function decrement(){
+    setCount(count - 1);
+   }
+
+   return(
+    <div>
+        <h1>카운터</h1>
+        <p>Count: {count}</p>
+        <button onClick={increment}>증가</button>
+        <button onClick={decrement}>감소</button>
+    </div>
+   );
 }
